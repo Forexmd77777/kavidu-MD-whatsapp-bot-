@@ -15,7 +15,7 @@ cmd({
         // Count total commands
         const totalCommands = Object.keys(commands).length;
         
-        const menuCaption = `╭━━━〔 *🧚‍♂️𝐒ᴇɴᴜ x 𝐁ᴏᴛ🧚‍♂️* 〕━━━┈⊷
+        const menuCaption = `╭━━━〔 *𝙺𝙰𝚅𝙸𝙳𝚄-𝙼𝙳* 〕━━━┈⊷
 │ ✓ 𝐎ᴡɴᴇʀ : *Jester*
 │ ✓ 𝐁ᴀɪʟᴇʏꜱ : *Multi Device*
 │ ✓ 𝐓ʏᴘᴇ : *NodeJs*
@@ -25,7 +25,7 @@ cmd({
 │ ✓ 𝐕ᴇʀꜱɪᴏɴ : *5.0.0 Bᴇᴛᴀ*
 │ ✓ 𝐂ᴏᴍᴍᴀɴᴅꜱ : *352*
 ╰━━━━━━━━━━━━━━━┈⊷
-╭━━〔 *🧚‍♂️𝐒ᴇɴᴜ x -ᴍᴇɴᴜ🧚‍♂️*  ━┈⊷
+╭━━〔 *𝙺𝙰𝚅𝙸𝙳𝚄-𝙼𝙳*  ━┈⊷
 ││❯❯ 01 *𝐃ᴏᴡɴʟᴏᴀᴅ ᴍᴇɴᴜ*
 ││❯❯ 02 *𝐆ʀᴏᴜᴘ ᴍᴇɴᴜ*
 ││❯❯ 03 *𝐅ᴜɴ ᴍᴇɴᴜ*
@@ -37,14 +37,14 @@ cmd({
 ││❯❯ 09 *𝐑ᴇᴀᴄᴛɪᴏɴꜱ ᴍᴇɴᴜ*
 ││❯❯ 10 *𝐌ᴀɪɴ ᴍᴇɴᴜ*
 ╰──────────────┈⊷
-> *🧚‍♂️𝐒ᴇɴᴜ x -𝐁ᴏᴛ🧚‍♂️*}`;
+> *𝙺𝙰𝚅𝙸𝙳𝚄-𝙼𝙳*}`;
 
         const contextInfo = {
             mentionedJid: [m.sender],
             forwardingScore: 999,
             isForwarded: true,
             forwardedNewsletterMessageInfo: {
-                newsletterJid: '120363388320701164@newsletter',
+                newsletterJid: '120363422383085384@newsletter',
                 newsletterName: config.OWNER_NAME,
                 serverMessageId: 143
             }
@@ -56,7 +56,7 @@ cmd({
                 return await conn.sendMessage(
                     from,
                     {
-                        image: { url: config.MENU_IMAGE_URL || 'https://i.ibb.co/bjPrbF84/3174.jpg' },
+                        image: { url: config.MENU_IMAGE_URL || 'https://i.ibb.co/Z12ByPbd/9307.jpg' },
                         caption: menuCaption,
                         contextInfo: contextInfo
                     },
