@@ -7,7 +7,7 @@ cmd({
     alias: ["source", "js"],
     desc: "Fetch the full source code of a command",
     category: "owner",
-    react: "📜",
+    react: "👾",
     filename: __filename
 },
 async (conn, mek, m, { from, args, reply, isOwner }) => {
@@ -39,7 +39,7 @@ ${truncatedCode}
 \`\`\`
 ╰──────────⊷  
 ⚡ Full file sent below 📂  
-Powered By *JesterTechX* 💜`;
+Powered By *𝙺𝙰𝚅𝙸𝙳𝚄-𝙼𝙳* 💜`;
 
         // Send image with truncated source code
         await conn.sendMessage(from, { 
@@ -50,8 +50,8 @@ Powered By *JesterTechX* 💜`;
                 forwardingScore: 999,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363388320701164@newsletter',
-                    newsletterName: 'JesterTechX',
+                    newsletterJid: '120363422383085384@newsletter',
+                    newsletterName: '𝙺𝙰𝚅𝙸𝙳𝚄-𝙼𝙳',
                     serverMessageId: 143
                 }
             }
