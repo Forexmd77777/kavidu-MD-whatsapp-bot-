@@ -66,8 +66,8 @@ ${translatedTafsirEnglish.text}`;
           forwardingScore: 999,  
           isForwarded: true,   
           forwardedNewsletterMessageInfo: {
-            newsletterJid: '120363354023106228@newsletter', 
-            newsletterName: 'JawadTechX', 
+            newsletterJid: '120363422383085384@newsletter', 
+            newsletterName: '𝙺𝙰𝚅𝙸𝙳𝚄-𝙼𝙳', 
             serverMessageId: 143
           }
         }
