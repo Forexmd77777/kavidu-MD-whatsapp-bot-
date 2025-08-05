@@ -31,9 +31,9 @@ MENU_IMAGE_URL: process.env.MENU_IMAGE_URL || "https://i.ibb.co/Z12ByPbd/9307.jp
 // add custom menu and mention reply image url
 PREFIX: process.env.PREFIX || ".",
 // add your prifix for bot   
-BOT_NAME: process.env.BOT_NAME || "SENU-X-BOT",
+BOT_NAME: process.env.BOT_NAME || "KAVIDU-MD",
 // add bot namw here for menu
-STICKER_NAME: process.env.STICKER_NAME || "SENU-MD",
+STICKER_NAME: process.env.STICKER_NAME || "KAVIDU-MD",
 // type sticker pack name 
 CUSTOM_REACT: process.env.CUSTOM_REACT || "false",
 // make this true for custum emoji react    
@@ -49,7 +49,7 @@ DESCRIPTION: process.env.DESCRIPTION || "*© ᴘᴏᴡᴇʀᴇᴅ ʙʏ kavidu*",
 // add bot owner name    
 ALIVE_IMG: process.env.ALIVE_IMG || "https://i.ibb.co/Z12ByPbd/9307.jpg",
 // add img for alive msg
-LIVE_MSG: process.env.LIVE_MSG || "> I'm alive now *SENU-MD*⚡",
+LIVE_MSG: process.env.LIVE_MSG || "> I'm alive now 𝙺𝙰𝚅𝙸𝙳𝚄-𝙼𝙳⚡",
 // add alive msg here 
 READ_MESSAGE: process.env.READ_MESSAGE || "false",
 // Turn true or false for automatic read msgs
