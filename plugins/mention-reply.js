@@ -40,8 +40,8 @@ cmd({
           forwardingScore: 999,
           isForwarded: true,
           externalAdReply: {
-            title: config.BOT_NAME || "SENU-MD 🥀",
-            body: config.DESCRIPTION || "POWERED BY JESTER TECHX 🤌💗",
+            title: config.BOT_NAME || "KAVIDU-MD",
+            body: config.DESCRIPTION || "POWERED BY KAVIDU-MD 🤌💗",
             mediaType: 1,
             renderLargerThumbnail: true,
             thumbnail: thumbnailBuffer,
