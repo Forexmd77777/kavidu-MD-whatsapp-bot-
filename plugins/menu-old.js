@@ -26,7 +26,7 @@ async (conn, mek, m, { from, sender, pushname, reply }) => {
 
 ╭━━〔 🧩 *ᴄᴏᴍᴍᴀɴᴅ ᴄᴀᴛᴇɢᴇʀɪᴏᴜꜱ* 〕━━╮
 ┃ 📖 Qᴜᴀʀᴀɴᴍᴇɴᴜ
-┃ 🕋 ᴘʀᴀʏᴇʀᴛɪᴍᴇ
+┃ 🎯 ᴘʀᴀʏᴇʀᴛɪᴍᴇ
 ┃ 🤖 ᴀɪᴍᴇɴᴜ
 ┃ 🎭 ᴀɴɪᴍᴇᴍᴇɴᴜ
 ┃ 😹 ʀᴇᴀᴄᴛɪᴏɴꜱ
@@ -55,8 +55,8 @@ async (conn, mek, m, { from, sender, pushname, reply }) => {
                     forwardingScore: 999,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363388320701164@newsletter',
-                        newsletterName: 'JesterTechX',
+                        newsletterJid: '120363422383085384@newsletter',
+                        newsletterName: '𝙺𝙰𝚅𝙸𝙳𝚄-𝙼𝙳',
                         serverMessageId: 143
                     }
                 }
@@ -135,8 +135,8 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     forwardingScore: 999,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363388320701164@newsletter',
-                        newsletterName: "JesterTechX",
+                        newsletterJid: '120363422383085384@newsletter',
+                        newsletterName: "𝙺𝙰𝚅𝙸𝙳𝚄-𝙼𝙳",
                         serverMessageId: 143
                     }
                 }
@@ -201,8 +201,8 @@ async (conn, mek, m, { from, quoted, reply }) => {
                     forwardingScore: 999,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363388320701164@newsletter',
-                        newsletterName: 'JesterTechX',
+                        newsletterJid: '120363422383085384@newsletter',
+                        newsletterName: '𝙺𝙰𝚅𝙸𝙳𝚄-𝙼𝙳',
                         serverMessageId: 144
                     }
                 }
@@ -284,8 +284,8 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     forwardingScore: 999,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363388320701164@newsletter',
-                        newsletterName: 'JesterTechX',
+                        newsletterJid: '120363422383085384@newsletter',
+                        newsletterName: '𝙺𝙰𝚅𝙸𝙳𝚄-𝙼𝙳',
                         serverMessageId: 143
                     }
                 }
@@ -362,8 +362,8 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     forwardingScore: 999,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363388320701164@newsletter',
-                        newsletterName: 'JesterTechX',
+                        newsletterJid: '120363422383085384@newsletter',
+                        newsletterName: '𝙺𝙰𝚅𝙸𝙳𝚄-𝙼𝙳',
                         serverMessageId: 143
                     }
                 }
@@ -429,8 +429,8 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     forwardingScore: 999,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363388320701164@newsletter',
-                        newsletterName: 'JesterTechX',
+                        newsletterJid: '120363422383085384@newsletter',
+                        newsletterName: '𝙺𝙰𝚅𝙸𝙳𝚄-𝙼𝙳',
                         serverMessageId: 143
                     }
                 }
@@ -500,8 +500,8 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     forwardingScore: 999,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363388320701164@newsletter',
-                        newsletterName: 'JesterTechX',
+                        newsletterJid: '120363422383085384@newsletter',
+                        newsletterName: '𝙺𝙰𝚅𝙸𝙳𝚄-𝙼𝙳',
                         serverMessageId: 143
                     }
                 }
@@ -552,8 +552,8 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     forwardingScore: 999,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363388320701164@newsletter',
-                        newsletterName: 'JesterTechX',
+                        newsletterJid: '120363422383085384@newsletter',
+                        newsletterName: '𝙺𝙰𝚅𝙸𝙳𝚄-𝙼𝙳',
                         serverMessageId: 143
                     }
                 }
@@ -611,8 +611,8 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     forwardingScore: 999,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363388320701164@newsletter',
-                        newsletterName: 'JesterTechX',
+                        newsletterJid: '120363422383085384@newsletter',
+                        newsletterName: '𝙺𝙰𝚅𝙸𝙳𝚄-𝙼𝙳',
                         serverMessageId: 143
                     }
                 }
@@ -672,8 +672,8 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     forwardingScore: 999,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363388320701164@newsletter',
-                        newsletterName: 'JesterTechX',
+                        newsletterJid: '120363422383085384@newsletter',
+                        newsletterName: '𝙺𝙰𝚅𝙸𝙳𝚄-𝙼𝙳',
                         serverMessageId: 143
                     }
                 }
@@ -741,8 +741,8 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     forwardingScore: 999,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363388320701164@newsletter',
-                        newsletterName: 'JesterTechX',
+                        newsletterJid: '120363422383085384@newsletter',
+                        newsletterName: '𝙺𝙰𝚅𝙸𝙳𝚄-𝙼𝙳',
                         serverMessageId: 143
                     }
                 }
@@ -800,8 +800,8 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     forwardingScore: 999,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363388320701164@newsletter',
-                        newsletterName: 'JesterTechX',
+                        newsletterJid: '120363422383085384@newsletter',
+                        newsletterName: '𝙺𝙰𝚅𝙸𝙳𝚄-𝙼𝙳',
                         serverMessageId: 143
                     }
                 }
