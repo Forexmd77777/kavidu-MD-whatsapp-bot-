@@ -5,7 +5,7 @@ cmd({
     pattern: "pair",
     alias: ["getpair", "clonebot"],
     react: "✅",
-    desc: "Get pairing code for SENU-MD bot",
+    desc: "Get pairing code for KAVIDU-MD bot",
     category: "download",
     use: ".pair 94788770XXX",
     filename: __filename
@@ -27,7 +27,7 @@ cmd({
         }
 
         const pairingCode = response.data.code;
-        const doneMessage = "> *SENU-MD PAIRING COMPLETED*";
+        const doneMessage = "> *KAVIDU-MD PAIRING COMPLETED*";
 
         // Send initial message with formatting
         await reply(`${doneMessage}\n\n*Your pairing code is:* ${pairingCode}`);
