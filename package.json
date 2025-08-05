@@ -1,7 +1,7 @@
 {
-  "name": "SENU-MD",
+  "name": "KAVIDU-MD",
   "version": "4.5.0",
-  "description": "A WhatsApp Bot Created By JESTER",
+  "description": "A WhatsApp Bot Created By kavidu induwara",
   "main": "index.js",
   "scripts": {
     "start": "pm2 start index.js --deep-monitoring --attach --name SENU-MD",
