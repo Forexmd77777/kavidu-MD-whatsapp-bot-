@@ -9,7 +9,7 @@ const searchCache = new NodeCache({ stdTTL: 60, checkperiod: 120 });
 // FROZEN QUEEN Theme
 // ======================
 const frozenTheme = {
-  header: `╭═══▸□◂═══╮\n   ༺ CHAMA-MD-V1 ༻\n  ╰═══▸□◂═══╯\n`,
+  header: `╭═══▸□◂═══╮\n   ༺ 𝙺𝙰𝚅𝙸𝙳𝚄-𝙼𝙳 ༻\n  ╰═══▸□◂═══╯\n`,
   box: function(title, content) {
     return `${this.header}╔═════▸□◂═════╗\n   ✧ ${title} ✧\n╚═════▸□◂═════╝\n\n${content}\n\n□═════▸□◂═════□\n✧ THE COLD NEVER BOTHERED ME ANYWAY ✧`;
   },
