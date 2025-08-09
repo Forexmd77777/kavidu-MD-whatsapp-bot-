@@ -3,7 +3,7 @@ const { sleep } = require("../lib/functions");
 
 cmd({  
     pattern: "restart",  
-    desc: "Restart SENU-MD",  
+    desc: "Restart 𝙺𝙰𝚅𝙸𝙳𝚄-𝙼𝙳",  
     category: "owner",  
     filename: __filename  
 },  
