@@ -25,7 +25,7 @@ cmd({
     responseMsg += `🍴 *Forks*: ${data.forks_count}\n`;
     responseMsg += `👤 *Owner*: ${data.owner.login}\n`;
     responseMsg += `📅 *Created At*: ${new Date(data.created_at).toLocaleDateString()}\n`;
-    responseMsg += `\n> *© Powered by JesterTechX*`;
+    responseMsg += `\n> *© Powered by 𝙺𝙰𝚅𝙸𝙳𝚄-𝙼𝙳;
 
     await conn.sendMessage(from, { text: responseMsg }, { quoted: m });
   } catch (error) {
