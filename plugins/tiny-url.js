@@ -16,7 +16,7 @@ async (conn, mek, m, { from, quoted, isOwner, isAdmins, reply, args }) => {
 
     if (!args[0]) {
         console.log("No URL provided"); // Ajoutez ceci pour vérifier si l'URL est fournie
-        return reply("*🏷️ ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴍᴇ ᴀ ʟɪɴᴋ.*");
+        return reply("*🏷️ 𝙺𝙰𝚅𝙸𝙳𝚄-𝙼𝙳.*");
     }
 
     try {
