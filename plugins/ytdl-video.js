@@ -1,53 +1,60 @@
-const config = require('../config');
 const { cmd } = require('../command');
-const yts = require('yt-search');
+const { ytsearch } = require('@dark-yasiya/yt-dl.js');
+const fetch = require("node-fetch");
+const path = require('path');
+const ffmpeg = require('fluent-ffmpeg');
+
 
 cmd({
-    pattern: "video2",
-    alias: ["mp4", "song"],
-    react: "🎥",
-    desc: "Download video from YouTube",
+    pattern: "video1",
+    alias: ["ytvideo1"],
+    react: "📽",
+    desc: "Download YouTube video (MP4)",
     category: "download",
-    use: ".video <query or url>",
+    use: ".video1 <query>",
     filename: __filename
-}, async (conn, m, mek, { from, q, reply }) => {
+}, async (conn, mek, m, { from, reply, q }) => {
     try {
-        if (!q) return await reply("❌ Please provide a video name or YouTube URL!");
+        if (!q) return reply("❓ What video do you want to download? Please provide a search term.");
 
-        let videoUrl, title;
-        
-        // Check if it's a URL
-        if (q.match(/(youtube\.com|youtu\.be)/)) {
-            videoUrl = q;
-            const videoInfo = await yts({ videoId: q.split(/[=/]/).pop() });
-            title = videoInfo.title;
-        } else {
-            // Search YouTube
-            const search = await yts(q);
-            if (!search.videos.length) return await reply("❌ No results found!");
-            videoUrl = search.videos[0].url;
-            title = search.videos[0].title;
+        await reply("🔍 *Searching for your video, please wait...*");
+
+        const search = await ytsearch(q);
+        if (!search.results.length) return reply("❌ No results found for your query.");
+
+        const { title, thumbnail, timestamp, url } = search.results[0];
+        const videoUrl = encodeURIComponent(url);
+
+        // Try primary API
+        const api1 = `https://apis-keith.vercel.app/download/dlmp4?url=${videoUrl}`;
+        const api2 = `https://apis.davidcyriltech.my.id/download/ytmp4?url=${videoUrl}`;
+
+        let data;
+
+        try {
+            const res1 = await fetch(api1);
+            data = await res1.json();
+            if (!data?.status || !data?.result?.downloadUrl) throw new Error("Primary API failed");
+        } catch {
+            const res2 = await fetch(api2);
+            data = await res2.json();
+            if (!data?.success || !data?.result?.download_url) throw new Error("Both APIs failed");
         }
 
-        await reply("⏳ Downloading video...");
-
-        // Use API to get video
-        const apiUrl = `https://apis.davidcyriltech.my.id/download/ytmp4?url=${encodeURIComponent(videoUrl)}`;
-        const response = await fetch(apiUrl);
-        const data = await response.json();
-
-        if (!data.success) return await reply("❌ Failed to download video!");
+        const downloadUrl = data.result.downloadUrl || data.result.download_url;
 
         await conn.sendMessage(from, {
-            video: { url: data.result.download_url },
-            mimetype: 'video/mp4',
-            caption: `*${title}*`
+            image: { url: thumbnail },
+            caption: `🎬 *Video Found:*\n\n📌 *Title:* ${title}\n⏱️ *Duration:* ${timestamp}\n🔗 *Link:* ${url}\n\n> Powered by 𝙳𝙰𝚁𝙺-𝙺𝙽𝙸𝙶𝙷𝚃-𝚇𝙼𝙳`
         }, { quoted: mek });
 
-        await reply(`✅ *${title}* downloaded successfully!`);
+        await conn.sendMessage(from, {
+            video: { url: downloadUrl },
+            mimetype: "video/mp4",
+            caption: `🎬 *Video Downloaded Successfully!*\n\n> Powered by 𝙳𝙰𝚁𝙺-𝙺𝙽𝙸𝙶𝙷𝚃-𝚇𝙼𝙳`
+        }, { quoted: mek });
 
     } catch (error) {
-        console.error(error);
-        await reply(`❌ Error: ${error.message}`);
+        reply(`❌ An error occurred: ${error.message}`);
     }
 });

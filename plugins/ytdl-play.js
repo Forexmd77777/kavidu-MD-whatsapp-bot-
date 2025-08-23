@@ -1,54 +1,83 @@
-const config = require('../config');
 const { cmd } = require('../command');
-const yts = require('yt-search');
+const { ytsearch } = require('@dark-yasiya/yt-dl.js');
+const axios = require('axios');
+const fs = require('fs');
+const config = require('../config');
+const path = require('path');
+const ffmpeg = require('fluent-ffmpeg');
 
 cmd({
-    pattern: "yt2",
-    alias: ["play2", "music"],
-    react: "🎵",
-    desc: "Download audio from YouTube",
+    pattern: "play",
+    alias: ["ytplay"],
+    react: "📲",
+    desc: "Download YouTube song or video",
     category: "download",
-    use: ".song <query or url>",
+    use: '.play <song name or YouTube URL>',
     filename: __filename
-}, async (conn, m, mek, { from, q, reply }) => {
+}, async (conn, mek, m, { from, reply, q }) => {
     try {
-        if (!q) return await reply("❌ Please provide a song name or YouTube URL!");
-
-        let videoUrl, title;
+        if (!q && !m.quoted) return reply("❓ What song or URL do you want to download? You can also reply to a message with a URL.");
         
-        // Check if it's a URL
-        if (q.match(/(youtube\.com|youtu\.be)/)) {
-            videoUrl = q;
-            const videoInfo = await yts({ videoId: q.split(/[=/]/).pop() });
-            title = videoInfo.title;
-        } else {
-            // Search YouTube
-            const search = await yts(q);
-            if (!search.videos.length) return await reply("❌ No results found!");
-            videoUrl = search.videos[0].url;
-            title = search.videos[0].title;
+        let input = q || (m.quoted && m.quoted.text);
+        if (!input) return reply("❌ No valid input provided!");
+
+        let isAudio = !input.toLowerCase().includes("video");
+
+        await reply("🔍 Searching, please wait...");
+
+        const search = await ytsearch(input);
+        if (!search.results.length) return reply("❌ No results found!");
+
+        const vid = search.results[0];
+        const title = vid.title.replace(/[^a-zA-Z0-9 ]/g, "");
+        const duration = vid.timestamp;
+        const videoUrl = vid.url;
+        const thumbnail = vid.thumbnail;
+        const outputPath = path.join(__dirname, `${title}.mp3`);
+
+        const apis = [
+            `https://www.dark-yasiya-api.site/download/ytmp3?url=${videoUrl}`,
+            `https://apis.davidcyriltech.my.id/youtube/mp3?url=${videoUrl}`,
+            `https://api.ryzendesu.vip/api/downloader/ytmp3?url=${videoUrl}`,
+            `https://api.dreaded.site/api/ytdl/audio?url=${videoUrl}`
+        ];
+
+        if (isAudio) {
+            for (const api of apis) {
+                try {
+                    const res = await axios.get(api);
+                    const data = res.data;
+                    if (!(data.status === 200 || data.success)) continue;
+
+                    const audioUrl = data.result?.downloadUrl || data.url;
+                    if (!audioUrl) continue;
+
+                    const stream = await axios({ url: audioUrl, method: "GET", responseType: "stream" });
+                    if (stream.status !== 200) continue;
+
+                    return ffmpeg(stream.data)
+                        .toFormat('mp3')
+                        .save(outputPath)
+                        .on('end', async () => {
+                            await conn.sendMessage(from, {
+                                document: { url: outputPath },
+                                mimetype: 'audio/mp3',
+                                fileName: `${title}.mp3`,
+                                caption: `🎶 *Title:* ${vid.title}\n⏱️ *Duration:* ${duration}\n\n> Powered by 𝙳𝙰𝚁𝙺-𝙺𝙽𝙸𝙶𝙷𝚃-𝚇𝙼𝙳`,
+                                thumbnail: { url: thumbnail }
+                            }, { quoted: mek });
+                            fs.unlinkSync(outputPath);
+                        })
+                        .on('error', err => reply("❌ Conversion failed\n" + err.message));
+                } catch (err) {
+                    continue;
+                }
+            }
+            return reply("❌ All APIs failed or are down.");
         }
 
-        await reply("⏳ Downloading audio...");
-
-        // Use API to get audio
-        const apiUrl = `https://api.davidcyriltech.my.id/download/ytmp3?url=${encodeURIComponent(videoUrl)}`;
-        const response = await fetch(apiUrl);
-        const data = await response.json();
-
-        if (!data.success) return await reply("❌ Failed to download audio!");
-
-        await conn.sendMessage(from, {
-            audio: { url: data.result.download_url },
-            mimetype: 'audio/mpeg',
-            ptt: false
-        }, { quoted: mek });
-
-        await reply(`✅ *${title}* downloaded successfully!`);
-
-    } catch (error) {
-        console.error(error);
-        await reply(`❌ Error: ${error.message}`);
+    } catch (e) {
+        console.error(e);
+        reply("❌ Something went wrong\n" + e.message);
     }
 });
-
